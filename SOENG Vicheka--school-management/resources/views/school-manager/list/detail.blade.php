@@ -94,6 +94,7 @@
         <div class="header">
             <h1>{{ $title }}</h1>
             <div class="links">
+                <a class="link" href="{{ route('list-management.create', $page) }}">Add New</a>
                 <a class="link" href="{{ route('list-management') }}">Back</a>
                 <a class="link" href="{{ url('/') }}">Home</a>
             </div>
