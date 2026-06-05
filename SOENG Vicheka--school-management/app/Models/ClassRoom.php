@@ -10,21 +10,21 @@ class ClassRoom extends Model
 
     protected $fillable = [
         'name',
-        'description'
+        'description',
     ];
 
     public function studentClasses()
     {
-        return $this->hasMany(StudentClass::class);
+        return $this->hasMany(StudentClass::class, 'class_id');
     }
 
     public function teacherClassSubjects()
     {
-        return $this->hasMany(TeacherClassSubject::class);
+        return $this->hasMany(TeacherClassSubject::class, 'class_id');
     }
 
     public function addClassToTerms()
     {
-        return $this->hasMany(AddClassToTerm::class);
+        return $this->hasMany(AddClassToTerm::class, 'class_id');
     }
 }

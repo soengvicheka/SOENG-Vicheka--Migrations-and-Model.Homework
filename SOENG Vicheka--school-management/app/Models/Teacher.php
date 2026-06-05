@@ -12,7 +12,7 @@ class Teacher extends Model
         'email',
         'phone',
         'profile',
-        'password'
+        'password',
     ];
 
     public function teacherClassSubjects()

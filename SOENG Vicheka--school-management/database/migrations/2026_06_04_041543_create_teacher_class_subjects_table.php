@@ -11,23 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-     Schema::create('teacher_class_subjects', function (Blueprint $table) {
-    $table->id();
-
-    $table->foreignId('teacher_id')
-          ->constrained('teachers')
-          ->cascadeOnDelete();
-
-    $table->foreignId('class_id')
-          ->constrained('classes')
-          ->cascadeOnDelete();
-
-    $table->foreignId('subject_id')
-          ->constrained('subjects')
-          ->cascadeOnDelete();
-
-    $table->timestamps();
-});
+        Schema::create('teacher_class_subjects', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('subject_id')
+                ->constrained('subjects')
+                ->cascadeOnDelete();
+            $table->foreignId('class_id')
+                ->constrained('classes')
+                ->cascadeOnDelete();
+            $table->foreignId('teacher_id')
+                ->constrained('teachers')
+                ->cascadeOnDelete();
+            $table->timestamps();
+        });
     }
 
     /**

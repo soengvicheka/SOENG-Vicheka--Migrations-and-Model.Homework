@@ -11,19 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-Schema::create('student_classes', function (Blueprint $table) {
-    $table->id();
-
-    $table->foreignId('class_id')
-          ->constrained('classes')
-          ->cascadeOnDelete();
-
-    $table->foreignId('student_id')
-          ->constrained('students')
-          ->cascadeOnDelete();
-
-    $table->timestamps();
-});
+        Schema::create('student_classes', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('class_id')
+                ->constrained('classes')
+                ->cascadeOnDelete();
+            $table->foreignId('student_id')
+                ->constrained('students')
+                ->cascadeOnDelete();
+            $table->timestamps();
+        });
     }
 
     /**

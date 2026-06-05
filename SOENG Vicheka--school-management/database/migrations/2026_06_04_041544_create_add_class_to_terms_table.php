@@ -11,19 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-    Schema::create('add_class_to_terms', function (Blueprint $table) {
-    $table->id();
-
-    $table->foreignId('term_id')
-          ->constrained('terms')
-          ->cascadeOnDelete();
-
-    $table->foreignId('class_id')
-          ->constrained('classes')
-          ->cascadeOnDelete();
-
-    $table->timestamps();
-});
+        Schema::create('add_class_to_terms', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('term_id')
+                ->constrained('terms')
+                ->cascadeOnDelete();
+            $table->foreignId('class_id')
+                ->constrained('classes')
+                ->cascadeOnDelete();
+            $table->timestamps();
+        });
     }
 
     /**

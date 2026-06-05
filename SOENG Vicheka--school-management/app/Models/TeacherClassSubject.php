@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class TeacherClassSubject extends Model
 {
     protected $fillable = [
-        'teacher_id',
+        'subject_id',
         'class_id',
-        'subject_id'
+        'teacher_id',
     ];
 
     public function teacher()
@@ -17,9 +17,14 @@ class TeacherClassSubject extends Model
         return $this->belongsTo(Teacher::class);
     }
 
-    public function class()
+    public function classRoom()
     {
         return $this->belongsTo(ClassRoom::class, 'class_id');
+    }
+
+    public function class()
+    {
+        return $this->classRoom();
     }
 
     public function subject()

@@ -6,6 +6,6 @@
     <title>School mangement system list</title>
 </head>
 <body>
-    <a href="list.management.blade.php">List of school management system </a>
+    <a href="{{ route('list-management') }}">List of school management system</a>
 </body>
 </html>

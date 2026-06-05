@@ -15,7 +15,7 @@ class Student extends Model
         'email',
         'password',
         'province',
-        'generation_id'
+        'generation_id',
     ];
 
     public function generation()

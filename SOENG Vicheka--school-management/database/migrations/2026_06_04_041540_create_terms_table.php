@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-       Schema::create('terms', function (Blueprint $table) {
-    $table->id();
-    $table->string('name');
-
-    $table->foreignId('generation_id')
-          ->constrained('generations')
-          ->cascadeOnDelete();
-
-    $table->timestamps();
-});
+        Schema::create('terms', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->foreignId('generation_id')
+                ->constrained('generations')
+                ->cascadeOnDelete();
+            $table->timestamps();
+        });
     }
 
     /**

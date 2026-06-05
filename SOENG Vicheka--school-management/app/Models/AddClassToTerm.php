@@ -8,7 +8,7 @@ class AddClassToTerm extends Model
 {
     protected $fillable = [
         'term_id',
-        'class_id'
+        'class_id',
     ];
 
     public function term()
@@ -16,8 +16,13 @@ class AddClassToTerm extends Model
         return $this->belongsTo(Term::class);
     }
 
-    public function class()
+    public function classRoom()
     {
         return $this->belongsTo(ClassRoom::class, 'class_id');
+    }
+
+    public function class()
+    {
+        return $this->classRoom();
     }
 }

@@ -8,7 +8,7 @@ class Term extends Model
 {
     protected $fillable = [
         'name',
-        'generation_id'
+        'generation_id',
     ];
 
     public function generation()

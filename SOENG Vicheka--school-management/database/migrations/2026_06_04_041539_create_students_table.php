@@ -12,22 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('students', function (Blueprint $table) {
-    $table->id();
-    $table->string('student_id')->unique();
-    $table->string('profile')->nullable();
-    $table->string('first_name');
-    $table->string('last_name');
-    $table->enum('gender',['Male','Female']);
-    $table->string('email')->unique();
-    $table->string('password');
-    $table->string('province');
-
-    $table->foreignId('generation_id')
-          ->constrained('generations')
-          ->cascadeOnDelete();
-
-    $table->timestamps();
-});
+            $table->id();
+            $table->string('student_id')->unique();
+            $table->string('profile')->nullable();
+            $table->string('last_name');
+            $table->string('first_name');
+            $table->string('gender');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->string('province');
+            $table->foreignId('generation_id')
+                ->constrained('generations')
+                ->cascadeOnDelete();
+            $table->timestamps();
+        });
     }
 
     /**
